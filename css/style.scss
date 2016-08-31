@@ -1,0 +1,60 @@
+/*================================ variables=======================================*/
+/*========= COLORS =======*/
+$grey: #757575; // grey
+$light-grey: #757575; //
+$ll-grey: #BDBDBD;
+$l-black: #212121;
+$black: #000000;
+/*========= FONT FAMILY =======*/
+@import 'https://fonts.googleapis.com/css?family=Noto+Sans|Ubuntu';
+$helvetica: "Helvetica Neue",Arial,Verdana,sans-serif;
+$ubuntu: 'Ubuntu', sans-serif, $helvetica;
+$noto: 'Noto Sans', sans-serif, $helvetica;
+/*================================ end variables=======================================*/
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body {
+    background-color: $ll-grey;
+    font-family: $ubuntu;
+}
+.container {
+    width: 90%;
+    max-width: 700px;
+    margin: auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    .wrapper {
+        background-color: #fff;
+        border-radius: 5px;
+        margin: 40px 0;
+        width: 100%;
+        overflow: hidden; // for the images
+        z-index: 1000; // in case in the future you use it with a drop-down menu and you need the menu to be on top
+    }
+    /* --------------------------------------- */
+    /* ----- Slider Banner */
+    /* --------------------------------------- */
+    .slider-banner {
+        overflow: hidden;
+        z-index: 1000;
+        position: relative;
+        .banner {
+            width: 100%;
+            position: relative;
+            img {
+                vertical-align: top;
+                width: 100%;
+                position: absolute;
+                top: 0;
+                left: 100%;
+            }
+            .arrow {}
+        }
+    }
+}

@@ -1,0 +1,48 @@
+/*================================ variables=======================================*/
+/*========= COLORS =======*/
+/*========= FONT FAMILY =======*/
+@import "https://fonts.googleapis.com/css?family=Noto+Sans|Ubuntu";
+/*================================ end variables=======================================*/
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body {
+  background-color: #BDBDBD;
+  font-family: "Ubuntu", sans-serif, "Helvetica Neue", Arial, Verdana, sans-serif; }
+
+.container {
+  width: 90%;
+  max-width: 700px;
+  margin: auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  /* --------------------------------------- */
+  /* ----- Slider Banner */
+  /* --------------------------------------- */ }
+  .container .wrapper {
+    background-color: #fff;
+    border-radius: 5px;
+    margin: 40px 0;
+    width: 100%;
+    overflow: hidden;
+    z-index: 1000; }
+  .container .slider-banner {
+    overflow: hidden;
+    z-index: 1000;
+    position: relative; }
+    .container .slider-banner .banner {
+      width: 100%;
+      position: relative; }
+      .container .slider-banner .banner img {
+        vertical-align: top;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 100%; }
+
+/*# sourceMappingURL=style.css.map */
