@@ -11,7 +11,7 @@ $(document).ready(function(){
   var $info = {
     containerInfo : $('#info'),
     slides: $('#info').children('.slide'),
-    numberSlides: $('#info').children('.slide').length,
+    numberSlides: $('#banner').children('.slide').length,
     position: 1
   };
 
@@ -45,7 +45,6 @@ $(document).ready(function(){
 
     var heightInfo = function () {
       var height = $info.containerInfo.children('.active').outerHeight();
-      //var height = $info.containerInfo.children('.active').outerHeight();
 
       $info.containerInfo.animate({
         'height': height + 'px'
