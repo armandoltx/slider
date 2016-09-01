@@ -29,8 +29,6 @@ body {
     max-width: 700px;
     margin: auto;
     height: 100%;
-    display: flex;
-    align-items: center;
     .wrapper {
         background-color: $white;
         border-radius: 5px;
@@ -131,6 +129,41 @@ body {
                         }
                     }
                 }
+            }
+            .dots {
+                width: 100%;
+                span {
+                    width: 14px;
+                    height: 14px;
+                    display: inline-block; // to modify width and height
+                    margin: 0 10px;
+                    border-radius: 50%;
+                    background-color: $ll-grey;
+                }
+                .active {
+                    background-color: $red;
+                }
+            }
+        }
+    }
+    /* --------------------------------------- */
+    /* ----- social  media */
+    /* --------------------------------------- */
+    .social-media {
+        text-align: center;
+        padding: 20px 0;
+        a {
+            display: inline-block;
+            font-size: 20px;
+            width: 50px;
+            height: 50px;
+            padding: 14px 0;
+            border-radius: 50%;
+            color: $white;
+            margin: 0 10px;
+            background-color: $ll-grey;
+            &:hover {
+                background-color: $orange;
             }
         }
     }
