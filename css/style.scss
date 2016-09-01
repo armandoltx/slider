@@ -1,10 +1,12 @@
 /*================================ variables=======================================*/
 /*========= COLORS =======*/
 $grey: #757575; // grey
-$light-grey: #757575; //
 $ll-grey: #BDBDBD;
 $l-black: #212121;
 $black: #000000;
+$white: #ffffff;
+$red: #D32F2F;
+$orange: #F44336;
 /*========= FONT FAMILY =======*/
 @import 'https://fonts.googleapis.com/css?family=Noto+Sans|Ubuntu';
 $helvetica: "Helvetica Neue",Arial,Verdana,sans-serif;
@@ -30,31 +32,108 @@ body {
     display: flex;
     align-items: center;
     .wrapper {
-        background-color: #fff;
+        background-color: $white;
         border-radius: 5px;
         margin: 40px 0;
         width: 100%;
         overflow: hidden; // for the images
         z-index: 1000; // in case in the future you use it with a drop-down menu and you need the menu to be on top
+        /* --------------------------------------- */
+        /* ----- Slider Banner */
+        /* --------------------------------------- */
+        .slider-banner {
+            overflow: hidden;
+            z-index: 1000;
+            position: relative;
+            .banner {
+                width: 100%;
+                position: relative;
+                img {
+                    vertical-align: top;
+                    width: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 100%;
+                }
+            }
+            .arrow-banner {
+                font-size: 35px;
+                line-height: 35px;
+                color: rgba($l-black, 0.6);
+                position: absolute;
+                top: 62%;
+                z-index: 1100;
+                &:hover {
+                    color: $l-black;
+                }
+            }
+            .prev {
+                left: 12px;
+            }
+            .next {
+                right: 12px;
+            }
+        }
+        // end slider-banner
     }
     /* --------------------------------------- */
-    /* ----- Slider Banner */
+    /* ----- Slider Info */
     /* --------------------------------------- */
-    .slider-banner {
+    .slider-info {
+        text-align: center;
         overflow: hidden;
-        z-index: 1000;
+        padding: 20px 0;
         position: relative;
-        .banner {
-            width: 100%;
-            position: relative;
-            img {
-                vertical-align: top;
-                width: 100%;
-                position: absolute;
-                top: 0;
-                left: 100%;
+        .arrow-slider {
+            font-size: 35px;
+            line-height: 35px;
+            color: $red;
+            position: absolute;
+            top: 40%;
+            z-index: 1000;
+            &:hover {
+                color: $orange;
             }
-            .arrow {}
+        }
+        .prev {
+            left: 20px;
+        }
+        .next {
+            right: 20px;
+        }
+        .information {
+            width: 100%;
+            article {
+                width: 100%;
+                overflow: hidden;
+                position: relative;
+                .slide {
+                    background-color: $white;
+                    width: 100%;
+                    position: absolute;
+                    left: 100%;
+                    padding: 20px 80px;
+                    .name {
+                        font-size: 38px;
+                        line-height: 38px;
+                        color: $l-black;
+                        margin-bottom: 15px;
+                    }
+                    .job {
+                        color: $orange;
+                        margin-bottom: 12px;
+                    }
+                    .site {
+                        color: $ll-grey;
+                        text-decoration: none;
+                        &:hover {
+                            color: $red;
+                        }
+                    }
+                }
+            }
         }
     }
+    //end wrapper
 }
+//end container
