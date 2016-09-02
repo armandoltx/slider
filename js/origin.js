@@ -215,7 +215,6 @@ $(document).ready(function(){
       $('#info .active').animate({
         'left': '-100%'
       });
-      //===================
 
       //to put images with out the class active on the right side of the slider
       $info.containerInfo.children().not('.active').css({
