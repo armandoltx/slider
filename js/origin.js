@@ -211,10 +211,11 @@ $(document).ready(function(){
 
     } else{
 
-      // to move the last image
+      // to move the last image which is active to the right
       $('#info .active').animate({
         'left': '-100%'
       });
+      //===================
 
       //to put images with out the class active on the right side of the slider
       $info.containerInfo.children().not('.active').css({
