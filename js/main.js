@@ -73,10 +73,13 @@ $(document).ready(function(){
 
 // Button Next
 
-//to put images with out the class active on the right side of the slider
-var notActiveToRight = function ( notActive ){
+//to put images with out the class active on the right side of the slider or the left
+  //left => 'left': '-100%'
+  //right => 'left': '100%'
+
+var notActiveTo = function ( notActive, num ){
   notActive.children().not('.active').css({
-    'left': '100%'
+    'left': parseInt( num ) + '%'
   });
 
 };
@@ -95,10 +98,13 @@ var moveActiveImgNext = function (activeImg) {
   });
 };
 
-// to move the last image which is active to the right
-  var lastImgToTheRight = function (imgToTheRight) {
-    imgToTheRight.animate({
-      'left': '-100%'
+// to move the last image which is active to the right or left
+//         right=> 'left': '-100%'
+//         left=> 'left': '100%'
+
+  var lastImgTo = function (imgTo, num) {
+    imgTo.animate({
+      'left': parseInt( num ) + '%'
     });
 
   };
@@ -110,7 +116,7 @@ var moveActiveImgNext = function (activeImg) {
 // to start again from the 1st image: 1 we add the active class to the 1st img and re-start position
 
 // var startFrom1stImg = function (param) {
-//   $('#param .active').removeClass('active');
+//   $(param + '.active').removeClass('active');
 //   $(param).slides.first().addClass('active').animate({
 //     'left': '0'
 //   });
@@ -122,13 +128,6 @@ var moveActiveImgNext = function (activeImg) {
 
 // Button Prev
 
-//to put images with out the class active on the left side of the slider
-var notActiveToLeft = function ( notActive ){
-  notActive.children().not('.active').css({
-    'left': '-100%'
-  });
-
-};
 
 //to move the actual image as well now both images move at the same time
 var moveActiveImgPrev = function (activeImg) {
@@ -145,16 +144,12 @@ var changeClassPrev = function (change) {
 
 };
 
-// to move the last image which is active to the left
 
-var lastImgToTheLeft = function (imgToTheLeft) {
-  imgToTheLeft.animate({
-    'left': '100%'
-  });
+// ---------------------------------------
+// ----- banner
+// ---------------------------------------
 
-};
 
-//------------------------------
 	// Button Next
 
   $('#banner-next').click( function (e){
@@ -163,7 +158,7 @@ var lastImgToTheLeft = function (imgToTheLeft) {
     if($banner.position < $banner.numberSlides) {
 
       //to put images with out the class active on the right side of the slider
-      notActiveToRight( $banner.containerBanner );
+      notActiveTo( $banner.containerBanner, 100 );
 
       //to change the class in the images so the new image can go
       changeClassNext( $('#banner .active') );
@@ -176,10 +171,12 @@ var lastImgToTheLeft = function (imgToTheLeft) {
     } else {
 
       // to move the last image which is active to the right
-      lastImgToTheRight( $('#banner .active') );
+      //lastImgToTheRight( $('#banner .active') );
+      lastImgTo( $('#banner .active'), -100 );
+
 
       //to put images with out the class active on the right side of the slider
-        notActiveToRight( $banner.containerBanner );
+        notActiveTo( $banner.containerBanner, 100 );
 
       // to start again from the 1st image: 1 we add the active class to the 1st img and re-start position
       $('#banner .active').removeClass('active');
@@ -208,7 +205,7 @@ var lastImgToTheLeft = function (imgToTheLeft) {
     if($banner.position > 1){
 
       //to put images with out the class active on the left side of the slider
-       notActiveToLeft( $banner.containerBanner );
+       notActiveTo( $banner.containerBanner, -100 );
 
       //to move the actual image as well now both images move at the same time
       moveActiveImgPrev( $('#banner .active') );
@@ -222,10 +219,11 @@ var lastImgToTheLeft = function (imgToTheLeft) {
     } else {
 
         // to move the last image which is active to the left
-        lastImgToTheLeft($('#banner .active'));
+        //lastImgToTheLeft($('#banner .active'));
+        lastImgTo($('#banner .active'), 100);
 
         //to put images with out the class active on the left side of the slider
-        notActiveToLeft($banner.containerBanner);
+        notActiveTo($banner.containerBanner, -100);
 
       // to pass the class active from the 1st image to the last img
       $('#banner .active').removeClass('active');
@@ -254,7 +252,7 @@ var lastImgToTheLeft = function (imgToTheLeft) {
     if($info.position < $info.numberSlides){
 
       //to put images with out the class active on the right side of the slider
-      notActiveToRight( $info.containerInfo );
+      notActiveTo( $info.containerInfo, 100 );
 
       //to change the class in the images so the new image can go
        changeClassNext( $('#info .active') );
@@ -270,11 +268,13 @@ var lastImgToTheLeft = function (imgToTheLeft) {
     } else{
 
       // to move the last image which is active to the right
-          lastImgToTheRight( $('#info .active') );
+          //lastImgToTheRight( $('#info .active') );
+          lastImgTo( $('#info .active'), -100 );
+
 
 
       //to put images with out the class active on the right side of the slider
-        notActiveToRight( $info.containerInfo );
+        notActiveTo( $info.containerInfo, 100 );
 
       // to start again from the 1st image: 1 we add the active class to the 1st img and re-start position
       $('#info .active').removeClass('active');
@@ -302,7 +302,7 @@ var lastImgToTheLeft = function (imgToTheLeft) {
     if($info.position > 1) {
 
       //to put images with out the class active on the left side of the slider
-       notActiveToLeft( $info.containerInfo );
+      notActiveTo( $info.containerInfo, -100 );
 
       //to move the actual image as well now both images move at the same time
       moveActiveImgPrev( $('#info .active') );
@@ -320,10 +320,12 @@ var lastImgToTheLeft = function (imgToTheLeft) {
     } else{
 
       // to put the images on the right hand side of the slider
-      notActiveToLeft($info.containerInfo);
+      notActiveTo($info.containerInfo, -100);
 
       //to put images with out the class active on the left side of the slider
-      lastImgToTheLeft($('#info .active'));
+      //lastImgToTheLeft($('#info .active'));
+      lastImgTo( $('#info .active'), 100 );
+
 
       // to pass the class active from the 1st image to the last img
       $('#info .active').removeClass('active');
