@@ -7,7 +7,7 @@ Today I am uploading a slider. It is a simple and responsive slider
 ## Goals
 
 - Create an slider where the images are responsive.
-- Improve my programming skills using CSS, HTML and JavaScript in te application.
+- Improve my programming skills using CSS, HTML and JavaScript in the application.
 - Build an application that I can reuse in my next projects.
 
 ## Approach
