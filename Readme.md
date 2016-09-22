@@ -1,6 +1,6 @@
 # Introduction
 
-As a part of my training in JavaScript to improve mi skills, I decide to rite code everyday and publish it on GitHub.
+As a part of my training in JavaScript to improve mi skills, I decide to write code everyday and publish it on GitHub.
 
 Today I am uploading a slider. It is a simple and responsive slider
 
